@@ -1,40 +1,26 @@
-<html>
-  <head>
-    <title>Contact Me</title>
-    <link href="static/main.css" rel="stylesheet" type="text/css">
 
-    <!-- Start of HubSpot Embed Code -->
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4718896.js"></script>
-    <!-- End of HubSpot Embed Code -->
-
-</head>
-  <body>
-    <div class="header">
-        <div class="nav">
-            <table>
-              <tr>
-                <td><a href="/">Home</a></td>
-                <td><a href="/about">About</a></td>
-                <td><a href="/contact">Contact</a></td>
-                <td><a href="/portfolio">Portfolio</a></td>
-              </tr>
-            </table>
-          </div>
-      <h1>Contact Me</h1>
-      <p>Homepage blah blah</p> 
+<%- include('header') -%>
+<div class="page">
+      <h2>Contact Me</h2> 
         <div class="form">
             <form action="/" method="post">
-                <div>
+                <div class="field">
                     <div class="label">
                         <label for="name">Name</label>
                     </div>
-                    <input id="name" name="firstname" type="text" value="">
+                    <input id="name" name="firstname" type="text" value="" placeholder="Name">
                 </div>
-                <div>
+                <div class="field">
                     <div class="label">
                         <label for="email">Email</label>
                     </div>
-                    <input id="email" name="email" type="text" value="">
+                    <input id="email" name="email" type="text" value="" placeholder="Email">
+                </div>
+                <div class="field">
+                    <div class="label">
+                        <label for="text">Message</label>
+                    </div>
+                    <input id="message" name="message" type="text" value="" placeholder="Ask me anything!">
                 </div>
                 <div class="button">    
                     <input type="submit" value="Submit" id="submit">
@@ -42,5 +28,6 @@
             </form>
         </div>
     </div>
+    <%- include('footer') -%>
   </body>
 </html>

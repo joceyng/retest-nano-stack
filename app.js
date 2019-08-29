@@ -28,7 +28,7 @@ const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const SCOPES = (process.env.SCOPE.split(/ |, ?|%20/) || ['contacts']).join(' ');
 
 // const REDIRECT_URI = `http://localhost:${PORT}/oauth-callback`; //
-const REDIRECT_URI = `https://salty-spire-58975.herokuapp.com/oauth-callback`;
+const REDIRECT_URI = `https://dry-brook-13043.herokuapp.com/oauth-callback`;
 
 const refreshTokenStore = {};
 const accessTokenCache = new NodeCache({ deleteOnExpire: true });
@@ -59,19 +59,19 @@ var database, collection;
 
 
 app.get('/', (req, res) => {
-    res.render('home'); 
+    res.render('home', {title: "Home"}); 
 });
 
 app.get('/about', (req, res) => {
-    res.render('about'); 
+    res.render('about', {title: "About"}); 
 });
 
 app.get('/portfolio', (req, res) => {
-    res.render('portfolio'); 
+    res.render('portfolio', {title: "Portfolio"}); 
 });
 
 app.get('/contact', (req, res) => {
-    res.render('contact'); 
+    res.render('contact', {title: "Contact"}); 
 });
 
 app.get('/install', (req, res) => {
@@ -206,7 +206,7 @@ app.post('/', (req, res) => {
 	    'hs_context': JSON.stringify({
 	        "hutk": req.cookies.hubspotutk,
 	        "ipAddress": req.headers['x-forwarded-for'] || req.connection.remoteAddress,
-	        "pageUrl": "https://salty-spire-58975.herokuapp.com/contact",
+	        "pageUrl": "https://dry-brook-13043.herokuapp.com/contact",
 	        "pageName": "Portfolio contact me"
 	    })
     });
