@@ -284,7 +284,7 @@ html {
         margin-bottom: 130px
     }
     .page {
-        width: 50%;
+        max-width: 60%;
     }
  }
  @media screen and (max-width: 575px) {
@@ -315,8 +315,8 @@ html {
         height: 160px;
     }
     .jumbotron {
-        max-height: 320px;
-        margin-bottom: 90px
+        max-height: 340px;
+        margin-bottom: 120px
     }
     .card h1 , .page h1 , .page h2 {
         font-size: 7vw !important;
@@ -329,4 +329,11 @@ html {
         margin: 10px auto;
     }
 
+ }
+
+ @media screen and (max-width: 360px) {
+     .jumbotron {
+        max-height: 300px;
+        margin-bottom: 90px
+    }
  }
