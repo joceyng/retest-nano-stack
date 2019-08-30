@@ -64,10 +64,10 @@ body {
 -------------------------------------------------- */
 .jumbotron {
     padding-bottom: 30px;
-    margin-bottom: 120px;
+    margin-bottom: 150px;
     background-image: -webkit-linear-gradient(0deg,#766dff 0%,#88f3ff 100%);
     position: relative;
-    max-height: 300px;
+    max-height: 350px;
 }
 
 .card {
@@ -75,7 +75,7 @@ body {
     max-width: 76%;
     margin: 20px auto;
     min-height: 300px;
-    padding: 30px 1% 20px 8%;
+    padding: 60px 1% 60px 8%;
     border-radius: 15px;
     position: relative;
     box-shadow: 0 20px 50px 0 rgba(153,153,153,.3);
@@ -273,7 +273,7 @@ html {
  
  @media screen and (min-width: 450px) and (max-width: 949px) {
     .card {
-        max-width: 400px;
+        max-width: 450px;
         padding: 30px 80px 20px 80px;
     }
     .media , .media-body {
@@ -282,6 +282,9 @@ html {
     .jumbotron {
         max-height: 450px;
         margin-bottom: 130px
+    }
+    .page {
+        width: 50%;
     }
  }
  @media screen and (max-width: 575px) {
