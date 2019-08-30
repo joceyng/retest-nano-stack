@@ -271,7 +271,7 @@ html {
     }
  }
  
- @media screen and (min-width: 450px) and (max-width: 949px) {
+ @media screen and (min-width: 500px) and (max-width: 949px) {
     .card {
         max-width: 450px;
         padding: 30px 80px 20px 80px;
@@ -288,11 +288,7 @@ html {
     }
  }
  @media screen and (max-width: 575px) {
-    .jumbotron {
-        padding-top: 4em;
-        margin-bottom: 130px;
-    }
-
+    
     .card h1 , .page h1 , .page h2 {
         font-size: 6vw !important;
     }
@@ -302,7 +298,7 @@ html {
 
  }
 
- @media screen and (max-width: 449px) {
+ @media screen and (max-width: 499px) {
     .card {
         max-width: 300px;
         padding: 20px 35px 10px 30px;
