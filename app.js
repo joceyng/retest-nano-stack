@@ -57,7 +57,13 @@ const CONNECTION_URL = "mongodb+srv://joceyng:test@joceyng-hqak4.mongodb.net/tes
 const DATABASE_NAME = "joceyng"; // you can change the database name
 var database, collection;
 
-
+MongoClient.connect(CONNECTION_URL, { useNewUrlParser: true }, (error, client) => {
+	if(error) throw error;
+  
+	database = client.db(DATABASE_NAME);
+	collection = database.collection("newcollection");
+});
+	
 app.get('/', (req, res) => {
     res.render('home', {title: "Home"}); 
 });
@@ -202,12 +208,13 @@ app.post('/', (req, res) => {
 
     var postData = querystring.stringify({
 	    'firstname': req.body.firstname,
-	    'email': req.body.email,
+		'email': req.body.email,
+		'message': req.body.message,
 	    'hs_context': JSON.stringify({
 	        "hutk": req.cookies.hubspotutk,
 	        "ipAddress": req.headers['x-forwarded-for'] || req.connection.remoteAddress,
 	        "pageUrl": "https://dry-brook-13043.herokuapp.com/contact",
-	        "pageName": "Portfolio contact me"
+	        "pageName": "Contact me"
 	    })
     });
     
