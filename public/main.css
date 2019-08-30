@@ -292,6 +292,14 @@ html {
         padding-top: 4em;
         margin-bottom: 130px;
     }
+
+    .card h1 , .page h1 , .page h2 {
+        font-size: 6vw !important;
+    }
+    .media-body p , .page p , .container , input {
+        font-size: 4vw !important;
+    }
+
  }
 
  @media screen and (max-width: 449px) {
