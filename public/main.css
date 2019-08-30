@@ -257,7 +257,7 @@ html {
     text-align: center;
   }
   
- @media only screen and (max-width: 1064px) and (min-width: 950px)  {
+ @media screen and (max-width: 1064px) and (min-width: 950px)  {
     .card {
         max-width: 70%;
         padding: 30px 80px 20px 80px;
