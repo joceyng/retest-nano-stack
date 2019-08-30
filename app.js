@@ -63,9 +63,13 @@ MongoClient.connect(CONNECTION_URL, { useNewUrlParser: true }, (error, client) =
 	database = client.db(DATABASE_NAME);
 	collection = database.collection("newcollection");
 });
-	
+
 app.get('/', (req, res) => {
-    res.render('home', {title: "Home"}); 
+    res.render('home', {title: "Home", name: req.body.name}); 
+});
+
+app.post('/', (req, res) => {
+	res.render('home', {title: "Home", name: req.body.name});
 });
 
 app.get('/about', (req, res) => {

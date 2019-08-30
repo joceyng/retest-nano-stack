@@ -162,6 +162,28 @@ body a:hover {
     margin: auto;
 }
 
+#input-greeting {
+    font-size: 40px;
+}
+
+h1.greeting {
+    margin-right: 10px;
+}
+
+p.greeting {
+    font-size: 40px;
+    color: #766dff;
+}
+
+.page-greeting , .page-greeting form{
+    display: inline-flex;
+    align-items: baseline;
+}
+
+.page-greeting input[type="submit"] {
+    visibility: hidden;
+}
+
 table , tr {
     margin: auto;
     width: 100%;
