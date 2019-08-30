@@ -102,7 +102,7 @@ body {
 }
 
 .avatar:hover {
-    background-image: url('/static/joce-wood.jpeg');
+    background-image: url('/static/joce-wood.jpg');
     transform: scale(1);
 }
 
