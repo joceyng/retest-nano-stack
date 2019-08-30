@@ -331,9 +331,16 @@ html {
 
  }
 
- @media screen and (max-width: 397px) {
+@media screen and (max-width: 398px) {
      .jumbotron {
-        max-height: 300px;
-        margin-bottom: 90px
-    }
+        max-height: 320px;
+        margin-bottom: 100px
+    }    
  }
+
+@media screen and (max-width: 333px) {
+   .card {
+       max-width: 260px;
+   }
+   
+}
