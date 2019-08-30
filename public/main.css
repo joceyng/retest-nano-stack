@@ -331,7 +331,7 @@ html {
 
  }
 
- @media screen and (max-width: 360px) {
+ @media screen and (max-width: 397px) {
      .jumbotron {
         max-height: 300px;
         margin-bottom: 90px
