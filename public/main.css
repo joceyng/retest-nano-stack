@@ -12,8 +12,8 @@ body {
     background:#000;
     margin-bottom: 0;
 }
-.nav-link,
-.navbar-brand {
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link,
+.navbar-dark .navbar-nav .nav-link {
     color: #fff;
     cursor: pointer;
 }
@@ -21,7 +21,7 @@ body {
     margin-right: 1em !important;
     font-size: 20px;
 }
-.nav-link:hover {
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
     color: #cc99cc;
     text-decoration: none;
     font-weight: 600;
@@ -30,8 +30,6 @@ body {
     justify-content: flex-end;
 }
 .navbar-nav {
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
     display: flex;
     justify-content: flex;
 }
@@ -51,6 +49,15 @@ body {
 .nav td {
     text-align: center;
     max-width: 40px;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url('https://mdbootstrap.com/img/svg/hamburger3.svg?color=88f3ff');
+
+}
+
+.navbar-dark .navbar-toggler {
+    border: none;
 }
 
 /* Jumbotron styles
@@ -121,6 +128,11 @@ body h1 {
     text-align: left;
 }
 
+h1.card-greeting {
+    text-align: center;
+    margin-top: 15px;
+}
+
 body a {
     color: #766dff;
     text-decoration: none;
@@ -129,6 +141,20 @@ body a {
 
 body a:hover {
     text-decoration: underline; 
+}
+.portfolio-icon {
+    width: fit-content;
+}
+
+.portfolio-icon img{
+    opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    margin: 20px auto;
+}
+
+.portfolio-icon:hover img{
+    opacity: .5;
 }
 
 .page {
@@ -209,9 +235,9 @@ html {
     text-align: center;
   }
   
- @media only screen and (min-width: 950px) and (max-width: 1064px) {
+ @media only screen and (max-width: 1064px) and (min-width: 950px)  {
     .card {
-        max-width: 80%;
+        max-width: 70%;
         padding: 30px 80px 20px 80px;
     }
     .media, .media-body {
@@ -219,25 +245,55 @@ html {
     }
     .jumbotron {
         max-height: 400px;
+        margin-bottom: 150px;
     }
  }
  
- @media only screen and (min-width: 450px) and (max-width: 949px) {
+ @media screen and (min-width: 450px) and (max-width: 949px) {
     .card {
-        max-width: 300px;
+        max-width: 400px;
         padding: 30px 80px 20px 80px;
     }
     .media , .media-body {
         display: block;
+    }
+    .jumbotron {
+        max-height: 450px;
+        margin-bottom: 130px
+    }
+ }
+ @media screen and (max-width: 575px) {
+    .jumbotron {
+        padding-top: 4em;
+        margin-bottom: 130px;
     }
  }
 
- @media only screen and (max-width: 449px) {
+ @media screen and (max-width: 449px) {
     .card {
-        max-width: 250px;
-        padding: 30px 80px 20px 80px;
+        max-width: 300px;
+        padding: 20px 35px 10px 30px;
     }
     .media , .media-body {
         display: block;
     }
+    .outer-avatar {
+        width: 160px;
+        height: 160px;
+    }
+    .jumbotron {
+        max-height: 320px;
+        margin-bottom: 90px
+    }
+    .card h1 , .page h1 , .page h2 {
+        font-size: 7vw !important;
+    }
+    .media-body p , .page p , .container , input {
+        font-size: 4vw !important;
+    }
+    .portfolio-icon img{
+        transform: scale(0.8);
+        margin: 10px auto;
+    }
+
  }
