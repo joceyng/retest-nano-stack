@@ -53,7 +53,7 @@ const authUrl =
 
 const MongoClient = require('mongodb').MongoClient;
 
-const CONNECTION_URL = "mongodb+srv://joceyng:j3E82%23vk@joceyng-hqak4.mongodb.net/test?retryWrites=true&w=majority";
+const CONNECTION_URL = "mongodb+srv://joceyng:test@joceyng-hqak4.mongodb.net/test?retryWrites=true&w=majority";
 const DATABASE_NAME = "joceyng"; // you can change the database name
 var database, collection;
 
