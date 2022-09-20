@@ -28,7 +28,7 @@ const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const SCOPES = (process.env.SCOPE.split(/ |, ?|%20/) || ['contacts']).join(' ');
 
 // const REDIRECT_URI = `http://localhost:${PORT}/oauth-callback`; //
-const REDIRECT_URI = `https://salty-spire-58975.herokuapp.com/oauth-callback`;
+const REDIRECT_URI = `https://ill-pink-magpie-garb.cyclic.app/oauth-callback`;
 
 const refreshTokenStore = {};
 const accessTokenCache = new NodeCache({ deleteOnExpire: true });
@@ -217,7 +217,7 @@ app.post('/', (req, res) => {
 	    'hs_context': JSON.stringify({
 	        "hutk": req.cookies.hubspotutk,
 	        "ipAddress": req.headers['x-forwarded-for'] || req.connection.remoteAddress,
-	        "pageUrl": "https://salty-spire-58975.herokuapp.com/contact",
+	        "pageUrl": "https://ill-pink-magpie-garb.cyclic.app/contact",
 	        "pageName": "Contact me"
 	    })
     });
