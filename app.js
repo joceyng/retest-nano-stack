@@ -46,8 +46,8 @@ app.use(session({
 const authUrl =
   'https://app.hubspot.com/oauth/authorize' +
   `?client_id=${encodeURIComponent(CLIENT_ID)}` + // app's client ID
-  `&scope=${encodeURIComponent(SCOPES)}` + // scopes being requested by the app
-  `&redirect_uri=${encodeURIComponent(REDIRECT_URI)}`; // where to send the user after the consent page
+  `&redirect_uri=${encodeURIComponent(REDIRECT_URI)}`+ // where to send the user after the consent page
+  `&scope=${encodeURIComponent(SCOPES)}` ; // scopes being requested by the app
 
 // OAuth (end)
 
