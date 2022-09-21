@@ -199,7 +199,7 @@ app.post('/admin', async (req, res) => {
 		var contactResults = JSON.stringify(searchResults.contacts);
 		var parsedResults = JSON.parse(contactResults);
 
-		res.render('searchresults', {contactsdata: parsedResults});
+		res.render('searchResults', {contactsdata: parsedResults});
 	} 
 	else {
 		res.redirect('/admin');
