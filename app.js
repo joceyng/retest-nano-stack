@@ -28,7 +28,7 @@ const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const SCOPES = (process.env.SCOPE.split(/ |, ?|%20/) || ['contacts']).join(' ');
 
 // const REDIRECT_URI = `http://localhost:${PORT}/oauth-callback`; //
-const REDIRECT_URI = `https://ill-pink-magpie-garb.cyclic.app/oauth-callback`;
+const REDIRECT_URI = `https://dark-bee-dirndl.cyclic.app/oauth-callback`;
 
 const refreshTokenStore = {};
 const accessTokenCache = new NodeCache({ deleteOnExpire: true });
@@ -228,7 +228,7 @@ app.post('/', (req, res) => {
 				],
 				"context": {
 				  "hutk": req.cookies.hubspotutk,
-				  "pageUri": "https://ill-pink-magpie-garb.cyclic.app/contact",
+				  "pageUri": "https://dark-bee-dirndl.cyclic.app/contact",
 				  "pageName": "Portfolio app contact page"
 				}
 			  }
