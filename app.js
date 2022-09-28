@@ -218,10 +218,12 @@ app.post('/', (req, res) => {
 			var data = {
 				"fields": [
 				  {
+					"objectTypeId": "0-1",
 					"name": "email",
 					"value": req.body.email
 				  },
 				  {
+					"objectTypeId": "0-1",
 					"name": "firstname",
 					"value": req.body.firstname
 				  }
@@ -258,6 +260,7 @@ app.post('/', (req, res) => {
 		   }
 		  
 		   formv3();
+		   console.log(req.body.email + ' ' + req.cookies.hubspotutk);
 		
     
 
