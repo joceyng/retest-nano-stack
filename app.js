@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 5000; // this is to push the code to Heroku or allow it to run locally at 3000 //
+// const PORT = process.env.PORT || 5000; // this is to push the code to Heroku or allow it to run locally at 3000 //
 const bodyParser = require('body-parser');
 const https = require('https');
 const cookieParser = require('cookie-parser');
@@ -209,7 +209,7 @@ app.post('/admin', async (req, res) => {
 });   
 
 app.post('/', (req, res) => {
-	console.log(req.body.email + ' ' + req.cookies.hubspotutk);
+	
     function formv3(){
 		// Create the new request 
 		var xhr = new XMLHttpRequest();
@@ -273,6 +273,6 @@ app.post('/', (req, res) => {
 
 
   // Start the application after the database connection is ready
-  app.listen(PORT, () => {
-	console.log('This app is running on port ' + PORT)
-  });   
+//   app.listen(PORT, () => {
+// 	console.log('This app is running on port ' + PORT)
+//   });   
