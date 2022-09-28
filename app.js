@@ -3,8 +3,8 @@ const app = express();
 const PORT = process.env.PORT || 5000; // this is to push the code to Heroku or allow it to run locally at 3000 //
 const bodyParser = require('body-parser');
 const https = require('https');
-const querystring = require('querystring');
 const cookieParser = require('cookie-parser');
+var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 
 app.set('view engine', 'ejs');
 app.use('/static', express.static('public'));
@@ -210,43 +210,56 @@ app.post('/admin', async (req, res) => {
 
 app.post('/', (req, res) => {
 
-    var postData = querystring.stringify({
-	    'firstname': req.body.firstname,
-		'email': req.body.email,
-		'message': req.body.message,
-	    'context': JSON.stringify({
-	        "hutk": req.cookies.hubspotutk,
-	        "ipAddress": req.headers['x-forwarded-for'] || req.connection.remoteAddress,
-	        "pageUrl": "https://ill-pink-magpie-garb.cyclic.app/contact",
-	        "pageName": "Contact me"
-	    })
-    });
+    function formv3(){
+		// Create the new request 
+		var xhr = new XMLHttpRequest();
+		var url = 'https://api.hsforms.com/submissions/v3/integration/submit/4718896/4f836c1a-cc7f-4df6-92fd-52d2f34f3e8d'
+		    // Example request JSON:
+			var data = {
+				"fields": [
+				  {
+					"name": "email",
+					"value": req.body.email
+				  },
+				  {
+					"name": "firstname",
+					"value": req.body.firstname
+				  }
+				],
+				"context": {
+				  "hutk": req.cookies.hubspotutk,
+				  "pageUri": "https://ill-pink-magpie-garb.cyclic.app/contact",
+				  "pageName": "Portfolio app contact page"
+				}
+			  }
+		  
+			  var final_data = JSON.stringify(data)
+		  
+			  xhr.open('POST', url);
+			  // Sets the value of the 'Content-Type' HTTP request headers to 'application/json'
+			  xhr.setRequestHeader('Content-Type', 'application/json');
+		  
+			  xhr.onreadystatechange = function() {
+				  if(xhr.readyState == 4 && xhr.status == 200) { 
+					  console.log(xhr.responseText); // Returns a 200 response if the submission is successful.
+				  } else if (xhr.readyState == 4 && xhr.status == 400){ 
+					  console.log(xhr.responseText); // Returns a 400 error the submission is rejected.          
+				  } else if (xhr.readyState == 4 && xhr.status == 403){ 
+					  console.log(xhr.responseText); // Returns a 403 error if the portal isn't allowed to post submissions.           
+				  } else if (xhr.readyState == 4 && xhr.status == 404){ 
+					  console.log(xhr.responseText); //Returns a 404 error if the formGuid isn't found     
+				  }
+				 }
+		  
+		  
+			  // Sends the request 
+			  
+			  xhr.send(final_data)
+		   }
+		  
+		   formv3();
+		
     
-    var options = {
-		hostname: 'api.hsforms.com',
-		path: '/submissions/v3/integration/secure/submit/4718896/4f836c1a-cc7f-4df6-92fd-52d2f34f3e8d',
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/x-www-form-urlencoded',
-			'Content-Length': postData.length,
-			'Authorization': `Bearer ${accessToken}`,
-		}
-    };
-    var request = https.request(options, function(response){
-		console.log("Status: " + response.statusCode);
-		console.log("Headers: " + JSON.stringify(response.headers));
-		response.setEncoding('utf8');
-		response.on('data', function(chunk){
-			console.log('Body: ' + chunk)
-		});
-	});
-
-	request.on('error', function(e){
-		console.log("Problem with request " + e.message)
-	});
-
-    request.write(postData);
-	request.end();
 
     collection.insertOne(req.body, (err, result) => {  
         if (err) return console.log(err)
