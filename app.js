@@ -260,9 +260,7 @@ app.post('/', (req, res) => {
 		   }
 		  
 		   formv3();
-		   console.log(req.body.email + ' ' + req.cookies.hubspotutk);
-		
-    
+		       
 
     collection.insertOne(req.body, (err, result) => {  
         if (err) return console.log(err)
@@ -270,8 +268,10 @@ app.post('/', (req, res) => {
         console.log('saved to database')
         res.redirect('/') // or do something else here
       });
+	  console.log(req.body.email + ' ' + req.cookies.hubspotutk);
       
 });
+
 
   // Start the application after the database connection is ready
   app.listen(PORT, () => {
