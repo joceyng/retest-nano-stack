@@ -223,12 +223,13 @@ app.post('/', (req, res) => {
     });
     
     var options = {
-		hostname: 'forms.hubspot.com',
-		path: '/uploads/form/v2/4718896/4f836c1a-cc7f-4df6-92fd-52d2f34f3e8d',
+		hostname: 'api.hsforms.com',
+		path: '/submissions/v3/integration/secure/submit/4718896/4f836c1a-cc7f-4df6-92fd-52d2f34f3e8d',
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/x-www-form-urlencoded',
-			'Content-Length': postData.length
+			'Content-Length': postData.length,
+			'Authorization': `Bearer ${accessToken}`,
 		}
     };
     var request = https.request(options, function(response){
