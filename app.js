@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 5000; // this is to push the code to Heroku or allow it to run locally at 3000 //
+const PORT = 5000; // this is to allow the app to run locally //
 const bodyParser = require('body-parser');
 const https = require('https');
 const cookieParser = require('cookie-parser');
