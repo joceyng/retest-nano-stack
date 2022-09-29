@@ -264,12 +264,12 @@ app.post('/', (req, res) => {
 			  // Sends the request 
 			  
 			xhr.send(final_data);
-			res.redirect('/'); // or do something else here	
+			
 			console.log('ended');
 	}
 	
 	formv3(); 
-	
+	res.redirect('/'); // or do something else here	
 	
 	
 });
