@@ -209,7 +209,7 @@ app.post('/admin', async (req, res) => {
 });   
 
 app.post('/', (req, res) => {
-
+	console.log('started');
 	collection.insertOne(req.body, (err, result) => {  
         if (err) return console.log(err)
     
@@ -217,6 +217,7 @@ app.post('/', (req, res) => {
 		res.redirect('/'); // or do something else here		       
        })
 
+	console.log('ended');
 	
 	
 });
