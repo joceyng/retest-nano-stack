@@ -208,13 +208,12 @@ app.post('/admin', async (req, res) => {
 
 });   
 
-app.post('/submit', (req, res) => {
+app.post('/', (req, res) => {
 
 	collection.insertOne(req.body, (err, result) => {  
         if (err) return console.log(err)
     
-        console.log('saved to database')
-        res.redirect('/') // or do something else here
+        console.log('saved to database');        
       })
 
     function formv3(){
@@ -264,13 +263,11 @@ app.post('/submit', (req, res) => {
 			  // Sends the request 
 			  
 			  xhr.send(final_data)
-		   }
-		   console.log(req.body.email + ' ' + req.cookies.hubspotutk);
-		   formv3();		       
-
-
-	  
-      
+	}
+	console.log(req.body.email + ' ' + req.cookies.hubspotutk);
+	formv3();
+	res.redirect('/'); // or do something else here		       
+ 
 });
 
 
