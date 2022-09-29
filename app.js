@@ -68,9 +68,9 @@ app.get('/', (req, res) => {
     res.render('home', {title: "Home", name: req.body.name}); 
 });
 
-app.post('/', (req, res) => {
-	res.render('home', {title: "Home", name: req.body.name});
-});
+// app.post('/', (req, res) => {
+// 	res.render('home', {title: "Home", name: req.body.name});
+// });
 
 app.get('/about', (req, res) => {
     res.render('about', {title: "About"}); 

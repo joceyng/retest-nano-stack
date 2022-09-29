@@ -17,6 +17,7 @@
     "express-session": "^1.16.2",
     "mongodb": "^3.3.0-beta2",
     "node-cache": "^4.2.1",
+    "nodemon": "^2.0.20",
     "querystring": "^0.2.0",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7",
