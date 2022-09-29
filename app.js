@@ -209,7 +209,14 @@ app.post('/admin', async (req, res) => {
 });   
 
 app.post('/', (req, res) => {
-	
+
+	collection.insertOne(req.body, (err, result) => {  
+        if (err) return console.log(err)
+    
+        console.log('saved to database')
+        res.redirect('/') // or do something else here
+      })
+
     function formv3(){
 		// Create the new request 
 		var xhr = new XMLHttpRequest();
@@ -261,12 +268,7 @@ app.post('/', (req, res) => {
 		   console.log(req.body.email + ' ' + req.cookies.hubspotutk);
 		   formv3();		       
 
-    collection.insertOne(req.body, (err, result) => {  
-        if (err) return console.log(err)
-    
-        console.log('saved to database')
-        res.redirect('/') // or do something else here
-      });
+
 	  
       
 });
