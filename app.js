@@ -68,10 +68,6 @@ app.get('/', (req, res) => {
     res.render('home', {title: "Home", name: req.body.name}); 
 });
 
-// app.post('/', (req, res) => {
-// 	res.render('home', {title: "Home", name: req.body.name});
-// });
-
 app.get('/about', (req, res) => {
     res.render('about', {title: "About"}); 
 });
@@ -209,7 +205,11 @@ app.post('/admin', async (req, res) => {
 });   
 
 app.post('/', (req, res) => {
-	
+	collection.insertOne(req.body, (err, result) => {  
+        if (err) return console.log(err)
+        console.log('saved to database'); 
+			       
+       })
 	function formv3(){
 		// Create the new request 
 		var xhr = new XMLHttpRequest();
@@ -261,12 +261,7 @@ app.post('/', (req, res) => {
 	}
 	
 	formv3(); 
-	collection.insertOne(req.body, (err, result) => {  
-        if (err) return console.log(err)
-    
-        console.log('saved to database'); 
-			       
-       })
+	
 	
 	res.redirect('/'); // or do something else here	
 	
