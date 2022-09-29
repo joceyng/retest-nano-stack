@@ -209,13 +209,6 @@ app.post('/admin', async (req, res) => {
 });   
 
 app.post('/', (req, res) => {
-	console.log('started');
-	collection.insertOne(req.body, (err, result) => {  
-        if (err) return console.log(err)
-    
-        console.log('saved to database'); 
-			       
-       })
 	
 	function formv3(){
 		// Create the new request 
@@ -265,10 +258,16 @@ app.post('/', (req, res) => {
 			  
 			xhr.send(final_data);
 			
-			console.log('ended');
 	}
 	
 	formv3(); 
+	collection.insertOne(req.body, (err, result) => {  
+        if (err) return console.log(err)
+    
+        console.log('saved to database'); 
+			       
+       })
+	
 	res.redirect('/'); // or do something else here	
 	
 	
