@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const https = require('https');
 const cookieParser = require('cookie-parser');
 var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
-const name = '';
+
 app.set('view engine', 'ejs');
 app.use('/static', express.static('public'));
 app.use(bodyParser.urlencoded({
